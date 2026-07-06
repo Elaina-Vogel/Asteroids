@@ -5,3 +5,4 @@ SCREEN_HEIGHT = 720
 ### Player ###
 PLAYER_RADIUS = 20  # radius of player's ship
 LINE_WIDTH = 2      # width of the lines that draw the player's ship
+PLAYER_TURN_SPEED = 300

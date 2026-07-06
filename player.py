@@ -1,7 +1,7 @@
 #player class that inherits from CircleShape
 import pygame
 import circleshape
-from constants import PLAYER_RADIUS, LINE_WIDTH
+from constants import PLAYER_RADIUS, LINE_WIDTH, PLAYER_TURN_SPEED
 
 # PLayer class for game objects
 class Player(circleshape.CircleShape):
@@ -22,3 +22,6 @@ class Player(circleshape.CircleShape):
     def draw(self, screen: pygame.Surface) -> None:
         # overriding super
         pygame.draw.polygon(screen, "white", self.triangle(), LINE_WIDTH)
+
+    def rotate(self, dt: float) -> None:
+        self.rotation = PLAYER_TURN_SPEED * dt
