@@ -10,6 +10,10 @@ def main():
     # initilize game
     pygame.init()
 
+    # init clock
+    clock = pygame.time.Clock()
+    dt = 0.0
+
     # set new instance of GUI Window
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
@@ -25,6 +29,9 @@ def main():
         screen.fill("black")
 
         pygame.display.flip()
+
+        dt = clock.tick(60) / 1000
+        #print(f"updated dt: {dt}")
 
 
 if __name__ == "__main__":
