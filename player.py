@@ -10,10 +10,6 @@ class Player(circleshape.CircleShape):
         super().__init__(x, y, PLAYER_RADIUS)
         self.rotation = 0
 
-        self.position: pygame.Vector2 = pygame.Vector2(x, y)
-        self.velocity = pygame.Vector2(0, 0)
-        self.radius = 0
-
     # bootdevvy's code
     def triangle(self) -> list[pygame.Vector2]:
         forward = pygame.Vector2(0, 1).rotate(self.rotation)
@@ -26,7 +22,3 @@ class Player(circleshape.CircleShape):
     def draw(self, screen: pygame.Surface) -> None:
         # overriding super
         pygame.draw.polygon(screen, "white", self.triangle(), LINE_WIDTH)
-
-    def update(self, dt: float) -> None:
-        # must override
-        pass
