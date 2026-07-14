@@ -1,6 +1,7 @@
 import pygame
 import player
 import asteroid
+import shot
 from asteroidfield import AsteroidField
 from constants import SCREEN_HEIGHT, SCREEN_WIDTH
 from logger import log_state, log_event
@@ -26,6 +27,7 @@ def main():
     player.Player.containers = (updatable, drawable)
     asteroid.Asteroid.containers = (asteroids, updatable, drawable)
     AsteroidField.containers = (updatable)
+    shot.Shot.containers = (shots, drawable, updatable)
 
     # init player
     p = player.Player(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
