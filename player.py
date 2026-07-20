@@ -44,9 +44,15 @@ class Player(circleshape.CircleShape):
             self.move(dt)
         if keys[pygame.K_s]:
             self.move(-dt)
+        if keys[pygame.K_SPACE]:
+            self.shoot()
 
-#### left off num 6
     def shoot(self) ->None:
-        s = shot.Shot(self.position)
-        s.velocity = pygame.Vector2(0, 1)
-        s.rotate()
+        s = shot.Shot(self.position.x, self.position.y)
+        ihateeverything = pygame.Vector2(0, 1)
+
+        #.rotate() the vector in the direction the player is facing.
+        ihateeverything = ihateeverything.rotate(self.rotation)
+
+        #Scale it up (multiply by PLAYER_SHOOT_SPEED) to make it move faster.
+        s.velocity = ihateeverything * PLAYER_SHOOT_SPEED

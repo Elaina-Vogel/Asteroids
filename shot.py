@@ -3,9 +3,6 @@ import pygame
 import circleshape
 from constants import SHOT_RADIUS, LINE_WIDTH
 
-def __init__(self, x: float, y: float, radius: float) -> None:
-    super().__init__(x, y, radius)
-
 # PLayer class for game objects
 class Shot(circleshape.CircleShape):
 
